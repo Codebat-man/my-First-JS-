@@ -3,6 +3,16 @@ var database = [
 {
 	username:  "abhaygoyal",
 	password:  "Abhay12@"
+},
+{
+	username: "srishtygoyal",
+	password: "Abhay12@"
+
+},
+
+{
+	username: "tushargoyal",
+	password: "Abhay12@"
 }
               
 ];
@@ -14,15 +24,26 @@ var newsfeed =
    },
    {
    	username: "Ayush",
-   	timeline: "Eating and Sleeping in Corona KAL"
+   	timeline: "Eating and Sleeping in Corona KAL" 
    }
    ]
 
 var usernameprompt = prompt("Enter your username");
 var passwordprompt = prompt("Enter your Password");
+function validity(username, password){
+	if(username === usernameprompt && password === passwordprompt){
+   	return true;
+   }
+   else{ return false;}
+
+}
+database.forEach(validity);
+
+
+
 
 function signIN(user,pass){
-    if (user===database[0].username && pass===database[0].password){
+    if (validity(usernameprompt, passwordprompt)){
     	console.log(newsfeed);
     }
     else{
